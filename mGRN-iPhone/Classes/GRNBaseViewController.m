@@ -117,10 +117,10 @@
     [alert show];
 }
 
--(IBAction)back:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//-(IBAction)back:(id)sender
+//{
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 -(void)getDataFromAPI
 {
@@ -179,6 +179,11 @@
     self.dataArray = [self getDataArray];
     [self.tableView reloadData];
     self.searchBar.hidden = YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.searchBar resignFirstResponder];
 }
 
 -(NSArray*)getDataArray

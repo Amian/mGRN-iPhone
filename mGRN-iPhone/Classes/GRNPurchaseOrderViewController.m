@@ -87,7 +87,7 @@
         @catch (NSException *exception) {
             NSLog(@"%@",exception);
         }
-
+        
     }
     [context save:nil];
     self.dataArray = [self getDataArray];
@@ -100,10 +100,12 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    GRNPODetailViewController *vc = segue.destinationViewController;
-    vc.purchaseOrder = [self.dataArray objectAtIndex:[self.tableView indexPathForSelectedRow].section];
+    if ([segue.identifier isEqualToString:@"purchaseDetail"])
+    {
+        GRNPODetailViewController *vc = segue.destinationViewController;
+        vc.purchaseOrder = [self.dataArray objectAtIndex:[self.tableView indexPathForSelectedRow].section];
+    }
 }
-
 #pragma mark - Table Delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
