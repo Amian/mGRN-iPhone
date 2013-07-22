@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 @class GRN;
 @class PurchaseOrder;
-@interface GRNOrderItemViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface GRNOrderItemViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) GRN *grn;
 @property (nonatomic, strong) PurchaseOrder *purchaseOrder;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITextField *sdn;
+@property (strong, nonatomic) IBOutlet UILabel *poLabel;
 
+- (IBAction)acceptOrClear:(UIButton*)sender;
 @end

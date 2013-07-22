@@ -23,6 +23,8 @@
 		F72D4D79179B3BCD00BD4BE4 /* icon_sign_white.png in Resources */ = {isa = PBXBuildFile; fileRef = F72D4D78179B3BCD00BD4BE4 /* icon_sign_white.png */; };
 		F72D4D7B179B3C5100BD4BE4 /* icon_sign_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72D4D7A179B3C5100BD4BE4 /* icon_sign_white@2x.png */; };
 		F72D4D7D179C18B100BD4BE4 /* down_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F72D4D7C179C18B100BD4BE4 /* down_icon.png */; };
+		F72D4D80179DDD4300BD4BE4 /* GRNOrderItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D7F179DDD3E00BD4BE4 /* GRNOrderItemDetailViewController.m */; };
+		F72D4D86179DDD7D00BD4BE4 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D85179DDD7D00BD4BE4 /* DrawView.m */; };
 		F76716E617859E8D00920CEA /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = F76716E217859E8D00920CEA /* logout.png */; };
 		F76716E717859E8D00920CEA /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = F76716E317859E8D00920CEA /* reload.png */; };
 		F76716E817859E8D00920CEA /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = F76716E417859E8D00920CEA /* search.png */; };
@@ -109,6 +111,12 @@
 		F72D4D78179B3BCD00BD4BE4 /* icon_sign_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sign_white.png; sourceTree = "<group>"; };
 		F72D4D7A179B3C5100BD4BE4 /* icon_sign_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_sign_white@2x.png"; sourceTree = "<group>"; };
 		F72D4D7C179C18B100BD4BE4 /* down_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_icon.png; sourceTree = "<group>"; };
+		F72D4D7E179DDD3B00BD4BE4 /* GRNOrderItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRNOrderItemDetailViewController.h; sourceTree = "<group>"; };
+		F72D4D7F179DDD3E00BD4BE4 /* GRNOrderItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRNOrderItemDetailViewController.m; sourceTree = "<group>"; };
+		F72D4D81179DDD6E00BD4BE4 /* BorderedTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderedTextView.h; sourceTree = "<group>"; };
+		F72D4D82179DDD6E00BD4BE4 /* BorderedTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderedTextView.m; sourceTree = "<group>"; };
+		F72D4D84179DDD7D00BD4BE4 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		F72D4D85179DDD7D00BD4BE4 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 		F76716E217859E8D00920CEA /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		F76716E317859E8D00920CEA /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 		F76716E417859E8D00920CEA /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
@@ -234,6 +242,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F72D4D83179DDD7D00BD4BE4 /* Signature Box */ = {
+			isa = PBXGroup;
+			children = (
+				F72D4D84179DDD7D00BD4BE4 /* DrawView.h */,
+				F72D4D85179DDD7D00BD4BE4 /* DrawView.m */,
+			);
+			path = "Signature Box";
+			sourceTree = "<group>";
+		};
 		F7B73FF7176CF44500E5A502 = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +334,8 @@
 				F72D4D60179B17D900BD4BE4 /* GRNPODetailViewController.m */,
 				F72D4D6F179B368400BD4BE4 /* GRNOrderItemViewController.h */,
 				F72D4D70179B368400BD4BE4 /* GRNOrderItemViewController.m */,
+				F72D4D7E179DDD3B00BD4BE4 /* GRNOrderItemDetailViewController.h */,
+				F72D4D7F179DDD3E00BD4BE4 /* GRNOrderItemDetailViewController.m */,
 				F7B74054176D070600E5A502 /* Segues */,
 				F7B74041176CFC1300E5A502 /* UI Elements */,
 			);
@@ -355,6 +374,9 @@
 		F7B74041176CFC1300E5A502 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				F72D4D83179DDD7D00BD4BE4 /* Signature Box */,
+				F72D4D81179DDD6E00BD4BE4 /* BorderedTextView.h */,
+				F72D4D82179DDD6E00BD4BE4 /* BorderedTextView.m */,
 				F7B74042176CFC1300E5A502 /* BorderedTextField.h */,
 				F7B74043176CFC1300E5A502 /* BorderedTextField.m */,
 				F7B74044176CFC1300E5A502 /* UnderlinedView.h */,
@@ -598,6 +620,8 @@
 				F72D4D5E179AE71800BD4BE4 /* GRNPurchaseOrderViewController.m in Sources */,
 				F72D4D61179B17DB00BD4BE4 /* GRNPODetailViewController.m in Sources */,
 				F72D4D71179B368500BD4BE4 /* GRNOrderItemViewController.m in Sources */,
+				F72D4D80179DDD4300BD4BE4 /* GRNOrderItemDetailViewController.m in Sources */,
+				F72D4D86179DDD7D00BD4BE4 /* DrawView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

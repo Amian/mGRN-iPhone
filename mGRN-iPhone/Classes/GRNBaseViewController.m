@@ -95,7 +95,7 @@
 - (IBAction)reloadData:(id)sender
 {
     //TODO:LoadingView
-    self.state = TableStateNormal;
+    self.selectedIndex = nil;
     [self getDataFromAPI];
 }
 
@@ -154,10 +154,16 @@
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.detailTextLabel.backgroundColor = [UIColor clearColor];
     
-//    if (self.state == TableStateSelected && indexPath.section != self.tableView.indexPathForSelectedRow.section)
-//    {
-//        cell.alpha = 0.4;
-//    }
+    if (self.selectedIndex && indexPath.section != self.selectedIndex.section)
+    {
+        cell.alpha = 0.4;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedIndex = indexPath;
+    [self.tableView reloadData];
 }
 
 //-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section

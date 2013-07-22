@@ -24,7 +24,7 @@
     {
         self.layer.borderWidth = 1.0;
         self.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        self.horizontalPadding = 15.0;
+        self.horizontalPadding = 5.0;
         self.font = [UIFont systemFontOfSize:20.0];
         self.textColor = [UIColor whiteColor];
         self.autocorrectionType = UITextAutocorrectionTypeNo;

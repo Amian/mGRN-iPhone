@@ -24,6 +24,7 @@ typedef enum
 @property (nonatomic, strong) NSArray *dataArray;
 @property (readonly) NSString *kco;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) NSIndexPath *selectedIndex;
 
 - (IBAction)logout:(id)sender;
 - (IBAction)showInfo:(id)sender;

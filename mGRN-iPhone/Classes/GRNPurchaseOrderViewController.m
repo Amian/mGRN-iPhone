@@ -103,13 +103,14 @@
     if ([segue.identifier isEqualToString:@"purchaseDetail"])
     {
         GRNPODetailViewController *vc = segue.destinationViewController;
-        vc.purchaseOrder = [self.dataArray objectAtIndex:[self.tableView indexPathForSelectedRow].section];
+        vc.purchaseOrder = [self.dataArray objectAtIndex:self.selectedIndex.section];
     }
 }
 #pragma mark - Table Delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     [self performSegueWithIdentifier:@"purchaseDetail" sender:self];
 }
 

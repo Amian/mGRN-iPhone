@@ -83,10 +83,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //TODO:Start
-    self.state = TableStateSelected;
-    //    [self.tableView reloadRowsAtIndexPaths:[self.tableView indexPathsForVisibleRows]
-    //                          withRowAnimation:UITableViewRowAnimationNone];
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     [self performSegueWithIdentifier:@"purchaseOrders" sender:self];
 }
 
@@ -160,7 +157,7 @@
     if ([segue.identifier isEqualToString:@"purchaseOrders"])
     {
         GRNPurchaseOrderViewController *pvc = segue.destinationViewController;
-        pvc.contract = [self.dataArray objectAtIndex:self.tableView.indexPathForSelectedRow.section];
+        pvc.contract = [self.dataArray objectAtIndex:self.selectedIndex.section];
     }
 }
 
