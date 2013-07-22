@@ -78,13 +78,20 @@
     NSArray *orders = [orderData objectForKey:@"purchaseOrders"];
     for (NSDictionary *dict in orders)
     {
-        [PurchaseOrder insertPurchaseOrderWithData:dict
-                                       forContract:self.contract
-                            inManagedObjectContext:context
-                                             error:&error];
+        @try {
+            [PurchaseOrder insertPurchaseOrderWithData:dict
+                                           forContract:self.contract
+                                inManagedObjectContext:context
+                                                 error:&error];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception);
+        }
+
     }
     [context save:nil];
     self.dataArray = [self getDataArray];
+    self.errorLabel.hidden = self.dataArray.count == 0? NO : YES;
     [self.tableView reloadData];
     [self stopLoading];
 }
@@ -169,4 +176,8 @@
     [self.tableView reloadData];
 }
 
+- (void)viewDidUnload {
+    [self setErrorLabel:nil];
+    [super viewDidUnload];
+}
 @end
