@@ -13,7 +13,7 @@
 #import "GRN+Management.h"
 
 @interface GRNPODetailViewController ()
-//@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSArray *dataArray;
 @end
 
 @implementation GRNPODetailViewController
@@ -100,16 +100,16 @@
     return self.dataArray.count;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
-
--(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 1.0, 1.0)];
-    return view;
-}
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//}
+//
+//-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 10.0, 0.0)];
+//    return view;
+//}
 
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
@@ -138,5 +138,29 @@
 
 - (IBAction)closeSDN:(id)sender {
     [self.sdnView removeFromSuperview];
+}
+
+- (IBAction)logout:(id)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure you want to log out?"
+                                                    message:nil
+                                                   delegate:self
+                                          cancelButtonTitle:@"NO"
+                                          otherButtonTitles:@"YES",nil];
+    [alert show];
+    
+}
+
+
+#pragma mark - Alert View Delegate
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != alertView.cancelButtonIndex)
+    {
+        //Logout
+        [CoreDataManager removeData:NO];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 @end
