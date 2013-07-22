@@ -1,0 +1,367 @@
+TmGRN-iPhone
+v5
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Info.plist mGRN-iPhone/mGRN-iPhone-Info.plist
+cDataModelVersionCompile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN_iPhone.momd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN_iPhone.xcdatamodeld
+cProcessPCH /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch.pth mGRN-iPhone/mGRN-iPhone-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/main.o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNAppDelegate.o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone normal i386
+cGenerateDSYMFile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app.dSYM /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone
+cCopyStringsFile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj/InfoPlist.strings mGRN-iPhone/en.lproj/InfoPlist.strings
+cCpResource mGRN-iPhone/Default.png DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default.png
+cCpResource mGRN-iPhone/Default@2x.png DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default@2x.png
+cCpResource mGRN-iPhone/Default-568h@2x.png DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default-568h@2x.png
+cCompileStoryboard /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPhone.storyboard
+cCompileStoryboard /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPad.storyboard
+cTouch /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk
+c00000000504916AD0000000000000110
+t1346967213
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c0000000050E36D2E000000000030BB10
+t1357081902
+s3193616
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.h
+c0000000050E36D2D000000000000053B
+t1357081901
+s1339
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c0000000050E36D2E0000000000228FD0
+t1357081902
+s2265040
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c0000000050E36D2F00000000003DCEF0
+t1357081903
+s4050672
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c0000000050E36D2E00000000000015F7
+t1357081902
+s5623
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c0000000050E36D320000000000000E8D
+t1357081906
+s3725
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c0000000050E36D340000000000AB3D60
+t1357081908
+s11222368
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/usr/include/Availability.h
+c0000000050E36D3F0000000000001B54
+t1357081919
+s6996
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch.pth
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNAppDelegate.o
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNDetailViewController.o
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNMasterViewController.o
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/mGRN-iPhone.LinkFileList
+c0000000051BCC0500000000000000172
+t1371324496
+s370
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/main.o
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app.dSYM
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default-568h@2x.png
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default.png
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default@2x.png
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Info.plist
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/PkgInfo
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj/InfoPlist.strings
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj/MainStoryboard_iPad.storyboardc
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj/MainStoryboard_iPhone.storyboardc
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN_iPhone.momd
+t2
+s0
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Default-568h@2x.png
+c0000000050748B2300000000000048A2
+t1349815075
+s18594
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Default.png
+c0000000050748B23000000000000198C
+t1349815075
+s6540
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Default@2x.png
+c0000000050748B230000000000003EEB
+t1349815075
+s16107
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNAppDelegate.m
+c0000000051BCBE8900000000000019AC
+t1371324041
+s6572
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNDetailViewController.m
+c0000000051BCBCC60000000000000835
+t1371323590
+s2101
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNMasterViewController.m
+c0000000051BCBCC60000000000002577
+t1371323590
+s9591
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/InfoPlist.strings
+c0000000051BCBCC5000000000000002D
+t1371323589
+s45
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPad.storyboard
+c0000000051BCBCC60000000000002664
+t1371323590
+s9828
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPhone.storyboard
+c0000000051BCC0500000000000000B7A
+t1371324496
+s2938
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN-iPhone-Prefix.pch
+c0000000051BCBCC50000000000000167
+t1371323589
+s359
+i<Availability.h>
+i<UIKit/UIKit.h>
+i<Foundation/Foundation.h>
+i<CoreData/CoreData.h>
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN_iPhone.xcdatamodeld
+c0000000051BCBCC60000000000000088
+t1371323590
+s136
+
+N/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/main.m
+c0000000051BCBCC5000000000000014F
+t1371323589
+s335
+
+NmGRN-iPhone/mGRN-iPhone-Info.plist
+c0000000051BCBCC5000000000000070F
+t1371323589
+s1807
+
+CBuild AST from /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNAppDelegate.m
+r0
+
+CBuild AST from /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNDetailViewController.m
+r0
+
+CBuild AST from /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNMasterViewController.m
+r0
+
+CBuild AST from /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies6e1382d0f76cb741^07ec8ad0f76cb741^---0#1#0#--18"Check dependencies36"C8831E89-CD8F-4965-A723-B46CCDFC5063-
+
+CCompileC DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNAppDelegate.o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s393017302.764650
+e393017303.241683
+r1
+xCompileC
+xDerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNAppDelegate.o
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNAppDelegate.m94f5c3d6f76cb741^09e13dd7f76cb741^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNAppDelegate.m0000000000000000^4273"CompileC DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNAppDelegate.o mGRN-iPhone/GRNAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-generated-files.hmap -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-own-target-headers.hmap -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-all-target-headers.hmap -iquote /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-project-headers.hmap -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/DerivedSources/i386 -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/DerivedSources -F/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator -include /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch -MMD -MT dependencies -MF /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNAppDelegate.d --serialize-diagnostics /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNAppDelegate.dia -c /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNAppDelegate.m -o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNAppDelegate.o36"9024A569-8903-4562-83FF-B0C62D0914BD-
+
+CCompileC DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNDetailViewController.o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNDetailViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/GRNMasterViewController.o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/GRNMasterViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/main.o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s393017302.764476
+e393017303.205274
+r1
+xCompileC
+xDerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/main.o
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection77"Compile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/main.mbdffc3d6f76cb741^3b8d34d7f76cb741^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/main.m0000000000000000^4213"CompileC DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/main.o mGRN-iPhone/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-generated-files.hmap -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-own-target-headers.hmap -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-all-target-headers.hmap -iquote /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-project-headers.hmap -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/DerivedSources/i386 -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/DerivedSources -F/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator -include /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch -MMD -MT dependencies -MF /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/main.dia -c /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/main.m -o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/main.o36"8ECBA7F5-1820-4378-ADA5-7013E3C3018E-
+
+CCompileStoryboard /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPad.storyboard
+s393017305.033624
+e393017307.298613
+r1
+xCompileStoryboard
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPad.storyboard
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"CompileStoryboard mGRN-iPhone/en.lproj/MainStoryboard_iPad.storyboardd3bf08d9f76cb741^26734cdbf76cb741^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPad.storyboard0000000000000000^1040"CompileStoryboard mGRN-iPhone/en.lproj/MainStoryboard_iPad.storyboard    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 6.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj/MainStoryboard_iPad.storyboardc /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPad.storyboard --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk36"BF4D18FF-A7FC-40F9-9D57-6B9904F18602-
+
+CCompileStoryboard /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPhone.storyboard
+s393017305.033602
+e393017306.403802
+r1
+xCompileStoryboard
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPhone.storyboard
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"CompileStoryboard mGRN-iPhone/en.lproj/MainStoryboard_iPhone.storyboard30ba08d9f76cb741^6b6067daf76cb741^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPhone.storyboard0000000000000000^1046"CompileStoryboard mGRN-iPhone/en.lproj/MainStoryboard_iPhone.storyboard    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 6.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj/MainStoryboard_iPhone.storyboardc /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/MainStoryboard_iPhone.storyboard --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk36"F12D8469-FE21-4475-958A-AF5E2868B63C-
+
+CCopyStringsFile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj/InfoPlist.strings mGRN-iPhone/en.lproj/InfoPlist.strings
+s393017305.029314
+e393017305.032429
+r1
+xCopyStringsFile
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj/InfoPlist.strings
+xmGRN-iPhone/en.lproj/InfoPlist.strings
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection43"Copy mGRN-iPhone/en.lproj/InfoPlist.strings459f07d9f76cb741^fd4d08d9f76cb741^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/en.lproj/InfoPlist.strings0000000000000000^681"CopyStringsFile DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj/InfoPlist.strings mGRN-iPhone/en.lproj/InfoPlist.strings    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/en.lproj -- mGRN-iPhone/en.lproj/InfoPlist.strings36"3FB1955A-3530-447E-A119-9B6CAADD5345-
+
+CCpResource mGRN-iPhone/Default-568h@2x.png DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default-568h@2x.png
+s393017305.029769
+e393017305.036147
+r1
+xCpResource
+xmGRN-iPhone/Default-568h@2x.png
+xDerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default-568h@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Copy DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default-568h@2x.png70b407d9f76cb741^104109d9f76cb741^---0#0#0#-19%DVTDocumentLocation2@163"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default-568h@2x.png000000000080d041^722"CpResource "mGRN-iPhone/Default-568h@2x.png" "DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default-568h@2x.png"    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Default-568h@2x.png" /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app36"CE2EFB4B-5CC7-4151-B897-6448F7001A53-
+
+CCpResource mGRN-iPhone/Default.png DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default.png
+s393017305.029326
+e393017305.033461
+r1
+xCpResource
+xmGRN-iPhone/Default.png
+xDerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default.pngdc9b07d9f76cb741^6d9108d9f76cb741^---0#0#0#-19%DVTDocumentLocation2@155"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default.png000000000080d041^692"CpResource mGRN-iPhone/Default.png DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default.png    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Default.png /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app36"E8D969E9-0E1B-44D2-879E-A923D898764A-
+
+CCpResource mGRN-iPhone/Default@2x.png DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default@2x.png
+s393017305.029490
+e393017305.035355
+r1
+xCpResource
+xmGRN-iPhone/Default@2x.png
+xDerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Copy DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default@2x.png9ca207d9f76cb741^6b0d09d9f76cb741^---0#0#0#-19%DVTDocumentLocation2@158"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default@2x.png000000000080d041^707"CpResource "mGRN-iPhone/Default@2x.png" "DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Default@2x.png"    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Default@2x.png" /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app36"B6FC2143-A52A-4FE4-9814-30C350953CD9-
+
+CDataModelVersionCompile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN_iPhone.momd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN_iPhone.xcdatamodeld
+s393017296.560364
+e393017299.204150
+r1
+xDataModelVersionCompile
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN_iPhone.momd
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN_iPhone.xcdatamodeld
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection154"DataModelVersionCompile DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN_iPhone.momd mGRN-iPhone/mGRN_iPhone.xcdatamodeld50898fd0f76cb741^b34334d3f76cb741^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN_iPhone.xcdatamodeld/0000000000000000^997"DataModelVersionCompile DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN_iPhone.momd mGRN-iPhone/mGRN_iPhone.xcdatamodeld    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/momc -XD_MOMC_SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -XD_MOMC_IOS_TARGET_VERSION=6.0 -MOMC_PLATFORMS iphonesimulator -MOMC_PLATFORMS iphoneos -XD_MOMC_TARGET_VERSION=10.6 /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN_iPhone.xcdatamodeld /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN_iPhone.momd36"78DCBA4B-C8C3-403B-8371-7F26D7D04DB6-
+
+CGenerateDSYMFile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app.dSYM /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone
+s393017304.952239
+e393017305.020140
+r1
+xGenerateDSYMFile
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app.dSYM
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection143"Generating /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app.dSYM8cdcf3d8f76cb741^392805d9f76cb741^---0#0#0#-19%DVTDocumentLocation2@148"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app.dSYM000000000080d041^817"GenerateDSYMFile DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app.dSYM DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone -o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app.dSYM36"79BA2460-5CDD-455A-9799-8C8FDF5050D2-
+
+CLd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone normal i386
+s393017303.248198
+e393017304.944331
+r1
+xLd
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection144"Link /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone16a23fd7f76cb741^33c0f1d8f76cb741^---0#0#0#--1425"Ld DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone normal i386    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv IPHONEOS_DEPLOYMENT_TARGET 6.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -L/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator -F/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator -filelist /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/Objects-normal/i386/mGRN-iPhone.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.0 -framework UIKit -framework Foundation -framework CoreGraphics -framework CoreData -o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/mGRN-iPhone36"9131214B-F921-4415-B1E2-1398B4C01AA1-
+
+CProcessInfoPlistFile /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Info.plist mGRN-iPhone/mGRN-iPhone-Info.plist
+s393017296.547515
+e393017296.551379
+r1
+xProcessInfoPlistFile
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Info.plist
+xmGRN-iPhone/mGRN-iPhone-Info.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection42"Process mGRN-iPhone/mGRN-iPhone-Info.plist6d3c8cd0f76cb741^bf288dd0f76cb741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN-iPhone-Info.plist0000000000000000^813"ProcessInfoPlistFile DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Info.plist mGRN-iPhone/mGRN-iPhone-Info.plist    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility mGRN-iPhone/mGRN-iPhone-Info.plist -genpkginfo /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app/Info.plist36"5A70E307-5B1D-40AD-AACD-671498F1BD2B-
+
+CProcessPCH /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch.pth mGRN-iPhone/mGRN-iPhone-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s393017296.560409
+e393017302.757126
+r1
+xProcessPCH
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch.pth
+xmGRN-iPhone/mGRN-iPhone-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Precompile mGRN-iPhone/mGRN-iPhone-Prefix.pchc4958fd0f76cb741^6bd2c1d6f76cb741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN-iPhone-Prefix.pch0000000000000000^4092"ProcessPCH DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch.pth mGRN-iPhone/mGRN-iPhone-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-generated-files.hmap -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-own-target-headers.hmap -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-all-target-headers.hmap -iquote /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/mGRN-iPhone-project-headers.hmap -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/DerivedSources/i386 -I/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/mGRN-iPhone.build/Debug-iphonesimulator/mGRN-iPhone.build/DerivedSources -F/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator --serialize-diagnostics /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch.dia -c /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/mGRN-iPhone-Prefix.pch -o /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch.pth -MMD -MT dependencies -MF /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Intermediates/PrecompiledHeaders/mGRN-iPhone-Prefix-gdgnlquhdrowwogdxcrfncttcmrs/mGRN-iPhone-Prefix.pch.d36"3AA2B8CF-268D-4AB5-B530-8DB70E0A3808-
+
+CProcessPCH /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Index/PrecompiledHeaders/mGRN-iPhone-Prefix-chumkqfjyelftxanjjifopbvcsqn_ast/mGRN-iPhone-Prefix.pch.pth mGRN-iPhone/mGRN-iPhone-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CTouch /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app
+s393017307.307681
+e393017307.647731
+r1
+xTouch
+x/Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection133"Touch /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app56d64edbf76cb741^f2d2a5dbf76cb741^---0#0#0#--486"Touch DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app    cd /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/DerivedData/mGRN-iPhone/Build/Products/Debug-iphonesimulator/mGRN-iPhone.app36"18199B4B-AE3F-4D5C-996B-382360DB704E-
+
