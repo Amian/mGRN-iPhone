@@ -13,11 +13,18 @@
 #import "M1XmGRNService.h"
 #import "GRNM1XHeader.h"
 #import "GRNPurchaseOrderViewController.h"
+#import "RejectionReasons+Management.h"
+#import "WBS+Management.h"
 
 @interface GRNContractsViewController ()
 @end
 
 @implementation GRNContractsViewController
+
+-(void)viewDidUnload
+{
+    self.service.delegate = nil;
+}
 
 - (void)viewDidLoad
 {
@@ -96,34 +103,58 @@
         //TODO
         return;
     }
-    [CoreDataManager removeAllContractData];
     [self startLoading];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [CoreDataManager removeAllContractData];
         [self.service GetContractsWithHeader:[GRNM1XHeader Header] kco:self.kco includeWBS:NO];
     }];
 }
 
--(void)onAPIRequestSuccess:(NSDictionary *)contractData requestType:(RequestType)requestType
+-(void)onAPIRequestSuccess:(NSDictionary *)response requestType:(RequestType)requestType
 {
-    //    NSLog(@"response = %@",contractData);
-    NSManagedObjectContext *context = [CoreDataManager moc];
-    NSError *error = NULL;
-    NSArray *contracts = [contractData objectForKey:@"contracts"];
-    NSMutableArray *contractObjectArray = [NSMutableArray array];
-    if (contracts.count)
+    if (requestType == RequestTypeGetContracts)
     {
-        [CoreDataManager removeData:NO];
+        //    NSLog(@"response = %@",contractData);
+        NSManagedObjectContext *context = [CoreDataManager moc];
+        NSError *error = NULL;
+        NSArray *contracts = [response objectForKey:@"contracts"];
+        NSMutableArray *contractObjectArray = [NSMutableArray array];
+        if (contracts.count)
+        {
+            [CoreDataManager removeData:NO];
+        }
+        for (NSDictionary *dict in contracts)
+        {
+            Contract *c = [Contract insertContractWithData:dict
+                                    inManagedObjectContext:context
+                                                     error:&error];
+            [contractObjectArray addObject:c];
+        }
+        [context save:nil];
+        self.dataArray = [self getDataArray];
+        [self.tableView reloadData];
+        if (![[RejectionReasons getAllRejectionReasonsInMOC:[CoreDataManager moc]] count])
+            [self getReasonsFromAPI];
+        else
+            [self stopLoading];
     }
-    for (NSDictionary *dict in contracts)
+    else if (requestType == RequestTypeRejectionReason)
     {
-        Contract *c = [Contract insertContractWithData:dict
-                                inManagedObjectContext:context
-                                                 error:&error];
-        [contractObjectArray addObject:c];
+        NSArray *reasons = [response objectForKey:@"reasons"];
+        for (NSDictionary *r in reasons)
+        {
+            [RejectionReasons insertRejectionReasonsWithDictionary:r inMOC:[CoreDataManager moc]];
+        }
+        [self stopLoading];
     }
-    [context save:nil];
-    self.dataArray = [self getDataArray];
-    [self.tableView reloadData];
+    else
+    {
+        [self stopLoading];
+    }
+}
+
+-(void)onAPIRequestFailure:(M1XResponse *)response
+{
     [self stopLoading];
 }
 
@@ -178,6 +209,16 @@
         self.dataArray = [self getDataArray];
     }
     [self.tableView reloadData];
+}
+
+-(void)getReasonsFromAPI
+{
+    M1XmGRNService *service = [[M1XmGRNService alloc] init];
+    service.delegate = self;
+    NSString *kco = [[NSUserDefaults standardUserDefaults] objectForKey:KeyKCO];
+    kco = [kco componentsSeparatedByString:@","].count > 0? [[kco componentsSeparatedByString:@","] objectAtIndex:0] : @"";
+    [service GetRejectionReasonsWithHeader:[GRNM1XHeader Header]
+                                       kco:kco];
 }
 
 @end

@@ -13,11 +13,14 @@
 #import "CoreDataManager.h"
 #import "GRN.h"
 #import "RejectionReasons+Management.h"
+#import "GRNM1XHeader.h"
+#import "M1XmGRNService.h"
+#import "LoadingView.h"
 
 #define WBSCodeText @"Select WBS Code"
 
-@interface GRNOrderItemDetailViewController ()
-
+@interface GRNOrderItemDetailViewController () <M1XmGRNDelegate>
+@property (nonatomic, strong) UIView *loadingView;
 @end
 
 @implementation GRNOrderItemDetailViewController
@@ -31,7 +34,7 @@
 -(void)displaySelectedItem
 {
     PurchaseOrderItem *item = self.grnItem.purchaseOrderItem;
-
+    
     if (![self.grnItem.grn.purchaseOrder.contract.useWBS boolValue] && !self.wbsButton.hidden)
     {
         self.wbsButton.hidden = YES;
@@ -42,12 +45,21 @@
     }
     else
     {
-        WBS *wbs = [WBS fetchWBSWithCode:self.grnItem.wbsCode.length? self.grnItem.wbsCode : item.wbsCode inMOC:[CoreDataManager moc]];
-        NSString *wbsCode = wbs.code.length? [NSString stringWithFormat:@"%@: %@",wbs.code,wbs.codeDescription] : WBSCodeText;
-        [self.wbsButton setTitle:wbsCode forState:UIControlStateNormal];
+        //Get wbs if not present
+        if (![[WBS fetchWBSCodesForContractNumber:self.grnItem.grn.purchaseOrder.contract.number
+                                            inMOC:[CoreDataManager moc]] count])
+        {
+            [self getWBS];
+        }
+        else
+        {
+            
+            WBS *wbs = [WBS fetchWBSWithCode:self.grnItem.wbsCode.length? self.grnItem.wbsCode : item.wbsCode inMOC:[CoreDataManager moc]];
+            NSString *wbsCode = wbs.code.length? [NSString stringWithFormat:@"%@: %@",wbs.code,wbs.codeDescription] : WBSCodeText;
+            [self.wbsButton setTitle:wbsCode forState:UIControlStateNormal];
+        }
     }
     
-
     self.itemLabel.text = item.itemNumber;
     self.descriptionLabel.text = item.itemDescription;
     [self.titleButton setTitle:item.itemDescription forState:UIControlStateNormal];
@@ -82,5 +94,60 @@
     }
 }
 
+-(void)getWBS
+{
+    [self startLoading];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        
+        M1XmGRNService *service = [[M1XmGRNService alloc] init];
+        service.delegate = self;
+        NSString *kco = [[NSUserDefaults standardUserDefaults] objectForKey:KeyKCO];
+        kco = [kco componentsSeparatedByString:@","].count > 0? [[kco componentsSeparatedByString:@","] objectAtIndex:0] : @"";
+        [service GetWBSWithHeader:[GRNM1XHeader Header]
+                   contractNumber:self.grnItem.grn.purchaseOrder.contract.number
+                              kco:kco];
+    }];
+}
 
+-(void)onAPIRequestFailure:(M1XResponse *)response
+{
+    
+}
+
+-(void)onAPIRequestSuccess:(NSDictionary *)response requestType:(RequestType)requestType
+{
+    NSArray *wbsData = [response objectForKey:@"wbsCodes"];
+    NSManagedObjectContext *context = [CoreDataManager moc];
+    for (NSDictionary *wbs in wbsData)
+    {
+        [WBS insertWBSCodesWithData:wbs
+                        forContract:self.grnItem.grn.purchaseOrder.contract
+             inManagedObjectContext:context
+                              error:nil];
+    }
+    WBS *wbs = [WBS fetchWBSWithCode:self.grnItem.wbsCode.length? self.grnItem.wbsCode : self.grnItem.purchaseOrderItem.wbsCode inMOC:[CoreDataManager moc]];
+    NSString *wbsCode = wbs.code.length? [NSString stringWithFormat:@"%@: %@",wbs.code,wbs.codeDescription] : WBSCodeText;
+    [self.wbsButton setTitle:wbsCode forState:UIControlStateNormal];
+    [self stopLoading];
+}
+
+-(void)startLoading
+{
+    [self.view addSubview:self.loadingView];
+}
+
+-(void)stopLoading
+{
+    [self.loadingView removeFromSuperview];
+}
+
+
+-(UIView*)loadingView
+{
+    if(!_loadingView)
+    {
+        _loadingView = [[LoadingView alloc] initWithFrame:self.view.bounds];
+    }
+    return _loadingView;
+}
 @end

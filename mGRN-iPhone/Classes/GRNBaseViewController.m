@@ -8,6 +8,8 @@
 
 #import "GRNBaseViewController.h"
 #import "CoreDataManager.h"
+#import "RejectionReasons+Management.h"
+#import "GRNM1XHeader.h"
 
 @interface GRNBaseViewController ()
 @property (nonatomic, strong) UIView *loadingView;

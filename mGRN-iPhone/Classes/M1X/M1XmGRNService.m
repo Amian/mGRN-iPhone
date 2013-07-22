@@ -85,6 +85,7 @@
 
 - (void)GetContractsWithHeader:(M1XRequestHeader *)header kco:(NSString*)kco includeWBS:(BOOL)includeWBS
 {
+    self.requestType = RequestTypeGetContracts;
     M1XRequestor *requestor = self.systemServiceRequestor;
     requestor.request = [[M1XRequest alloc] init];
     requestor.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",self.systemURL,M1xMgrnService_GetContracts]];
@@ -103,6 +104,7 @@
 
 - (void)GetPurchaseOrdersWithHeader:(M1XRequestHeader *)header contractNumber:(NSString*)contractnumber kco:(NSString*)kco includeLineItems:(BOOL)includeLineItems
 {
+    self.requestType = RequestTypeGetPurchaseOrdersByContracts;
     M1XRequestor *requestor = self.systemServiceRequestor;
     requestor.request = [[M1XRequest alloc] init];
     requestor.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",self.systemURL,M1xMgrnService_GetPurchaseOrdersByContract]];
@@ -117,6 +119,7 @@
 
 - (void)GetPurchaseOrdersDetailsWithHeader:(M1XRequestHeader *)header contractNumber:(NSString*)contractnumber kco:(NSString*)kco purchaseOrderNumber:(NSString*)poNumber
 {
+    self.requestType = RequestTypeGetPurchaseOrdersDetails;
     M1XRequestor *requestor = self.systemServiceRequestor;
     requestor.request = [[M1XRequest alloc] init];
     requestor.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",self.systemURL,M1xMgrnService_GetPurchaseOrdersDetails]];
@@ -131,6 +134,7 @@
 
 -(void)GetWBSWithHeader:(M1XRequestHeader*)header contractNumber:(NSString*)contractnumber kco:(NSString*)kco
 {
+    self.requestType = RequestTypeGetWBSByContract;
     M1XRequestor *requestor = self.systemServiceRequestor;
     requestor.request = [[M1XRequest alloc] init];
     requestor.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",self.systemURL,M1xMgrnService_GetWBSByContract]];
@@ -145,6 +149,7 @@
 
 -(void)GetRejectionReasonsWithHeader:(M1XRequestHeader*)header kco:(NSString*)kco
 {
+    self.requestType = RequestTypeRejectionReason;
     M1XRequestor *requestor = self.systemServiceRequestor;
     requestor.request = [[M1XRequest alloc] init];
     requestor.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",self.systemURL,M1xMgrnService_GetRejectionReasons]];
@@ -157,6 +162,7 @@
 
 -(void)DoSubmissionWithHeader:(M1XRequestHeader*)header grn:(M1XGRN*)grn lineItems:(NSArray*)lineItems kco:(NSString*)kco
 {
+    self.requestType = RequestTypeDoSubmission;
     M1XRequestor *requestor = self.systemServiceRequestor;
     requestor.request = [[M1XRequest alloc] init];
     requestor.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",self.systemURL,M1xMgrnService_DoSubmission]];
