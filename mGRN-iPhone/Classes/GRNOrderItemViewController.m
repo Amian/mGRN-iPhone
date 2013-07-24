@@ -31,19 +31,53 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];    
-//    [self.tableView beginUpdates];
-//    [self.tableView selectRowAtIndexPath:self.selectedIndexPath
-//                           animated:NO
-//                     scrollPosition:UITableViewScrollPositionMiddle];
-//    [self.tableView endUpdates];
-
+    [self.tableView reloadData];
+    [super viewWillAppear:animated];
+    //    [self.tableView beginUpdates];
+    //    [self.tableView selectRowAtIndexPath:self.selectedIndexPath
+    //                           animated:NO
+    //                     scrollPosition:UITableViewScrollPositionMiddle];
+    //    [self.tableView endUpdates];
+    
 }
 
 - (IBAction)next:(id)sender {
-    [self performSegueWithIdentifier:@"completeGRN" sender:self];
+    NSMutableString *errorString = [[NSMutableString alloc] init];
+    if (![self stripedTextLength:self.sdn.text])
+    {
+        [errorString appendFormat:@"Please enter a valid Supplier Reference Number (SDN).\n"];
+    }
+    else if ([SDN doesSDNExist:self.sdn.text inMOC:[CoreDataManager moc]])
+    {
+        [errorString appendFormat:@"A GRN with this Service Delivery Number has already been submitted. Please enter a different SDN.\n"];
+    }
+    else
+    {
+        self.grn.supplierReference = self.sdn.text;
+    }
+    //Check all line items
+    for (GRNItem *lineItem in self.grn.lineItems)
+    {
+        if ([lineItem.quantityRejected doubleValue] > [lineItem.quantityDelivered doubleValue])
+        {
+            [errorString appendFormat:@"Rejected ￼quantity for item must not exceed the quantity ￼delivered.\n"];
+            break;
+        }
+    }
+    if (errorString.length)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:errorString
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"completeGRN" sender:self];
+    }
 }
-
 - (IBAction)acceptOrClear:(UIButton*)sender
 {
     BOOL accept = [sender.titleLabel.text hasPrefix:@"Accept"];
@@ -84,7 +118,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     GRNItem *grnItem = [self.dataArray objectAtIndex:indexPath.row];
-
+    
     cell.textLabel.text = [NSString stringWithFormat:@"%@: %@ [%.02f of %.02f %@]",
                            grnItem.purchaseOrderItem.itemNumber,
                            grnItem.purchaseOrderItem.itemDescription,
@@ -127,7 +161,7 @@
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:self.selectedIndexPath];
         cell.selected = NO;
         [tableView deselectRowAtIndexPath:self.selectedIndexPath animated:NO];
-//        [tableView reloadRowsAtIndexPaths:@[self.selectedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+        //        [tableView reloadRowsAtIndexPaths:@[self.selectedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
         self.selectedIndexPath = nil;
     }
     
@@ -218,5 +252,17 @@
         GRNOrderItemDetailViewController *vc = segue.destinationViewController;
         vc.grnItem = [self.dataArray objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     }
+    else if ([segue.identifier isEqualToString:@"completeGRN"])
+    {
+        //Save items
+        [[CoreDataManager moc] save:nil];
+    }
 }
+
+
+-(int)stripedTextLength:(NSString*)text
+{
+    return [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length;
+}
+
 @end

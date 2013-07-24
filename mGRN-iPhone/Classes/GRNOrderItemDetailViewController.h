@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @class GRNItem;
-@interface GRNOrderItemDetailViewController : UIViewController
+#import "GRNRejectionReasonTableViewController.h"
+@interface GRNOrderItemDetailViewController : UIViewController <RejectionReasonDelegate>
 
 @property (nonatomic, strong) GRNItem *grnItem;
 
@@ -25,5 +26,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *serialNumber;
 @property (strong, nonatomic) IBOutlet UILabel *wbsCodeLabel;
 @property (strong, nonatomic) IBOutlet UIView *viewBelowWbsCode;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIButton *dismissKeyboardButton;
 
 @end

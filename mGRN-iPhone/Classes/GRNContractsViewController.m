@@ -15,7 +15,7 @@
 #import "GRNPurchaseOrderViewController.h"
 #import "RejectionReasons+Management.h"
 #import "WBS+Management.h"
-
+#import "PurchaseOrder.h"
 @interface GRNContractsViewController ()
 @end
 
