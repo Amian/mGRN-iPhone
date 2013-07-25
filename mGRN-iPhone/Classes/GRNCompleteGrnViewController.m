@@ -9,8 +9,15 @@
 #import "GRNCompleteGrnViewController.h"
 #import "GRN+Management.h"
 #import <QuartzCore/QuartzCore.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+#import "CoreDataManager.h"
+#import "PhotoPreviewVC.h"
+#import "GRNPurchaseOrderViewController.h"
+#import "SDN+Management.h"
+#import "PurchaseOrderItem+Management.h"
+#import "GRNItem+Management.h"
 
-@interface GRNCompleteGrnViewController ()
+@interface GRNCompleteGrnViewController () <UIImagePickerControllerDelegate, UIAlertViewDelegate, UITextViewDelegate>
 @property (nonatomic, strong) UIImage *image1;
 @property (nonatomic, strong) UIImage *image2;
 @property (nonatomic, strong) UIImage *image3;
@@ -19,6 +26,11 @@
 @end
 
 @implementation GRNCompleteGrnViewController
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    [self removeDatePicker];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,26 +49,68 @@
 
 -(void)displayGRN
 {
-    if (self.grn.deliveryDate)
-    {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"dd/MM/yyyy";
-        NSString *date = [formatter stringFromDate:self.grn.deliveryDate];
+        NSString *date;
+        date = [formatter stringFromDate:self.grn.deliveryDate? self.grn.deliveryDate : [NSDate date]];
         [self.dateButton setTitle:date forState:UIControlStateNormal];
-    }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.image1 = [UIImage imageWithData:[defaults objectForKey:KeyImage1]];
     self.image2 = [UIImage imageWithData:[defaults objectForKey:KeyImage2]];
     self.image3 = [UIImage imageWithData:[defaults objectForKey:KeyImage3]];
     [self refreshImageView];
-
+    
     //Remove data from nsuserdefaults
-    [defaults setObject:nil forKey:KeyImage1];
-    [defaults setObject:nil forKey:KeyImage2];
-    [defaults setObject:nil forKey:KeyImage3];
+//    [defaults setObject:nil forKey:KeyImage1];
+//    [defaults setObject:nil forKey:KeyImage2];
+//    [defaults setObject:nil forKey:KeyImage3];
     [defaults synchronize];
+    
+}
 
+
+- (IBAction)takePhoto:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:
+         UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.delegate = (id)self;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.mediaTypes = [NSArray arrayWithObjects: (NSString *) kUTTypeImage,nil];
+        imagePicker.allowsEditing = NO;
+        [self presentModalViewController:imagePicker animated:YES];
+    }
+}
+
+
+#pragma mark - ImagePicker Delegate Method
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+{
+    [self dismissModalViewControllerAnimated:YES];
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    if (!self.image1)
+    {
+        self.grn.photo1URI = [self base64forData:imageData];
+        self.image1 = image;
+    }
+    else if (!self.image2)
+    {
+        self.grn.photo2URI = [self base64forData:imageData];
+        self.image2 = image;
+    }
+    else if (!self.image3)
+    {
+        self.grn.photo3URI = [self base64forData:imageData];
+        self.image3 = image;
+    }
+    else
+    {
+        return;
+    }
+    [self refreshImageView];
 }
 
 
@@ -162,7 +216,64 @@
 
 - (IBAction)showDatePicker:(UIButton*)button
 {
+    [self.comments resignFirstResponder];
     self.datePickerView.hidden = NO;
+    self.dateButton.superview.layer.borderColor = [UIColor orangeColor].CGColor;
+}
+
+- (IBAction)submit:(id)sender
+{
+    //Check signature
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    UIImage *signature = [UIImage imageWithData:[defaults objectForKey:KeySignature]];
+    if (!signature)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"The signature can't be blank."
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
+    //Save Grn
+    self.grn.signatureURI = [self base64forData:UIImageJPEGRepresentation(signature ,1.f)];
+    self.grn.notes = self.comments.text;
+    
+    //Add to submission queue
+    self.grn.submitted = [NSNumber numberWithBool:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void)
+                   {
+                       [[CoreDataManager sharedInstance] submitAnyGrnsAwaitingSubmittion];
+                   });
+    
+    //Add SDN to core data
+    [SDN InsertSDN:self.grn.supplierReference InMOC:[CoreDataManager moc]];
+    
+    //Adjust purchase orders
+    [self updatePurchaseOrder];
+    NSError *error;
+    [[CoreDataManager moc] save:&error];
+    NSLog(@"Error = %@",error);
+    
+    
+    [defaults setObject:nil forKey:KeyImage1];
+    [defaults setObject:nil forKey:KeyImage2];
+    [defaults setObject:nil forKey:KeyImage3];
+    [defaults setObject:nil forKey:KeySignature];
+    [defaults synchronize];
+    
+    for (UIViewController *vc in self.navigationController.viewControllers)
+    {
+        if ([vc isKindOfClass:[GRNPurchaseOrderViewController class]])
+        {
+            [(GRNPurchaseOrderViewController*)vc setReturnedAfterSubmission:YES];
+            [self.navigationController popToViewController:vc animated:YES];
+            break;
+        }
+    }
 }
 
 
@@ -185,30 +296,32 @@
 {
     if (!_datePickerView)
     {
-    _datePickerView = [[UIView alloc] init];   //view
-    
-    UIDatePicker *datePicker=[[UIDatePicker alloc]init];//Date picker
-    datePicker.frame=CGRectMake(0,44,320, 216);
-    datePicker.datePickerMode = UIDatePickerModeDate;
-    [datePicker setMinuteInterval:5];
-    [datePicker setMaximumDate:[NSDate date]];
-    [datePicker setTag:10];
-    [datePicker addTarget:self action:@selector(donePickingDate:) forControlEvents:UIControlEventValueChanged];
-    
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0, 0.0, datePicker.frame.size.width, 44.0)];
-    toolbar.tintColor = [UIColor blackColor];
-    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-                                                             style:UIBarButtonItemStyleDone
-                                                            target:self
-                                                            action:@selector(removeDatePicker)];
-    toolbar.items = [NSArray arrayWithObject:done];
+        _datePickerView = [[UIView alloc] init];   //view
+        
+        UIDatePicker *datePicker=[[UIDatePicker alloc]init];//Date picker
+        datePicker.frame=CGRectMake(0,44,320, 216);
+        datePicker.datePickerMode = UIDatePickerModeDate;
+        [datePicker setMinuteInterval:5];
+        [datePicker setMaximumDate:[NSDate date]];
+        [datePicker setTag:10];
+        if (self.grn.deliveryDate)
+            datePicker.date = self.grn.deliveryDate;
+        [datePicker addTarget:self action:@selector(donePickingDate:) forControlEvents:UIControlEventValueChanged];
+        
+        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0, 0.0, datePicker.frame.size.width, 44.0)];
+        toolbar.tintColor = [UIColor blackColor];
+        UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                 style:UIBarButtonItemStyleDone
+                                                                target:self
+                                                                action:@selector(removeDatePicker)];
+        toolbar.items = [NSArray arrayWithObject:done];
         self.datePickerView.frame = CGRectMake(0.0, self.view.frame.size.height - datePicker.frame.size.height - toolbar.frame.size.height,
                                                self.view.frame.size.width,
                                                datePicker.frame.size.height + toolbar.frame.size.height);
         [_datePickerView addSubview:datePicker];
         [_datePickerView addSubview:toolbar];
         [self.view addSubview:_datePickerView];
-
+        
     }
     return _datePickerView;
 }
@@ -218,4 +331,83 @@
     [self.comments resignFirstResponder];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"backToGrn1"])
+    {
+        self.grn.notes = self.comments.text;
+        [[CoreDataManager moc] save:nil];
+    }
+    else if ([segue.identifier isEqualToString:@"imagePreview"])
+    {
+        PhotoPreviewVC *vc = segue.destinationViewController;
+        vc.image = self.selectedImage;
+    }
+}
+
+-(void)previewImage:(UIButton*)sender
+{
+    self.selectedImage = sender.tag == 1? self.image1 : sender.tag == 2? self.image2 : self.image3;
+    [self performSegueWithIdentifier:@"imagePreview"
+                              sender:self];
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != alertView.cancelButtonIndex)
+    {
+        switch (alertView.tag)
+        {
+            case 1:
+                self.grn.photo1URI = nil;
+                self.image1 = nil;
+                break;
+            case 2:
+                self.grn.photo2URI = nil;
+                self.image2 = nil;
+                break;
+            case 3:
+                self.grn.photo3URI = nil;
+                self.image3 = nil;
+                break;
+            default:
+                break;
+        }
+        [self refreshImageView];
+    }
+}
+
+-(void)updatePurchaseOrder
+{
+    PurchaseOrder *po = self.grn.purchaseOrder;
+    int poItemsRemoved = 0;
+    for (GRNItem *grnItem in self.grn.lineItems)
+    {
+        PurchaseOrderItem *poItem = grnItem.purchaseOrderItem;
+        poItem.quantityBalance = [NSNumber numberWithInt:[[poItem quantityBalance] intValue] - ([grnItem.quantityDelivered intValue] - [grnItem.quantityRejected intValue])];
+        if ([poItem.quantityBalance intValue] <= 0)
+        {
+            @try
+            {
+                [[CoreDataManager moc] deleteObject:poItem];
+            }
+            @catch (NSException *e)
+            {
+                //TOOD
+            }
+            poItemsRemoved++;
+        }
+    }
+    if ([po.lineItems count] == poItemsRemoved)
+    {
+        @try
+        {
+            [[CoreDataManager moc] deleteObject:po];
+        }
+        @catch (NSException *e)
+        {
+            //TOOD
+        }
+    }
+}
 @end

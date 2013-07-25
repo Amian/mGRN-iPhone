@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="HR0-Ou-aOw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="jcv-vJ-1Fy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -180,7 +180,7 @@
             <objects>
                 <viewController id="AZY-x2-qiS" customClass="GRNContractsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JGD-2U-DIp">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="KX2-Fe-gge" customClass="UnderlinedView">
@@ -310,7 +310,7 @@
             <objects>
                 <viewController id="zii-wz-WY7" customClass="GRNPurchaseOrderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NOF-UW-dtt">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="g3V-oU-Yeg" customClass="UnderlinedView">
@@ -527,7 +527,7 @@
             <objects>
                 <viewController id="Vwz-bw-wwi" customClass="GRNPODetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w1t-Wf-jMq">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="KlT-sT-NDi" customClass="UnderlinedView">
@@ -832,7 +832,7 @@
                                     <outlet property="delegate" destination="rOf-CS-fvi" id="cf2-fP-LcU"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Supplier Delivery Number (SDN)" minimumFontSize="17" id="3WA-iI-aUq" customClass="BorderedTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Supplier Delivery Number (SDN)" textAlignment="center" minimumFontSize="17" id="3WA-iI-aUq" customClass="BorderedTextField">
                                 <rect key="frame" x="14" y="59" width="292" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -898,7 +898,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rb3-pI-kn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2829" y="-264"/>
+            <point key="canvasLocation" x="3026" y="-216"/>
         </scene>
         <!--Order Item Detail View Controller-->
         <scene sceneID="WVA-J3-Nvg">
@@ -1178,7 +1178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OF-bA-KWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4103" y="-1"/>
+            <point key="canvasLocation" x="4035" y="185"/>
         </scene>
         <!--Complete Grn View Controller-->
         <scene sceneID="tKf-4Y-XXT">
@@ -1238,7 +1238,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="rOf-CS-fvi" kind="custom" customClass="PopViewControllerSegue" id="v5I-J2-Zfo"/>
+                                            <segue destination="rOf-CS-fvi" kind="custom" identifier="backToGrn1" customClass="PopViewControllerSegue" id="oLp-rE-uEd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1251,6 +1251,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HMH-gq-K5L">
                                         <rect key="frame" x="0.0" y="0.0" width="115" height="29"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="dd/mm/yyyy">
@@ -1274,6 +1275,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EGW-cd-XlP" id="Lrn-9e-el6"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JWq-Dv-Rff">
                                 <rect key="frame" x="20" y="345" width="95" height="95"/>
@@ -1290,6 +1294,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="EGW-cd-XlP" eventType="touchUpInside" id="BNq-Sy-kQG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gAn-Q3-D6C">
                                 <rect key="frame" x="205" y="345" width="95" height="95"/>
@@ -1327,10 +1334,11 @@
                                     <action selector="createGRN:" destination="Vwz-bw-wwi" eventType="touchUpInside" id="hiN-G3-LeS"/>
                                     <action selector="next:" destination="rOf-CS-fvi" eventType="touchUpInside" id="GqG-ip-0nY"/>
                                     <action selector="next:" destination="Vwz-bw-wwi" eventType="touchUpInside" id="mfQ-Cb-eKP"/>
+                                    <action selector="submit:" destination="EGW-cd-XlP" eventType="touchUpInside" id="lRl-K2-7s0"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="dYy-cf-nWA">
-                                <rect key="frame" x="20" y="222" width="280" height="110"/>
+                                <rect key="frame" x="20" y="229" width="280" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -1343,23 +1351,62 @@
                         <outlet property="comments" destination="5gu-UF-vnb" id="Mcc-wI-Bgz"/>
                         <outlet property="dateButton" destination="HMH-gq-K5L" id="Zfd-Np-qAQ"/>
                         <outlet property="photoView" destination="dYy-cf-nWA" id="JZR-Xi-fSS"/>
+                        <outlet property="takePhotoButton" destination="JWq-Dv-Rff" id="8Tx-8p-kJl"/>
+                        <segue destination="gyr-WA-X9Y" kind="modal" identifier="imagePreview" modalTransitionStyle="coverVertical" id="Zcf-XC-aoQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZH-MS-nEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3543" y="-659"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="cBZ-C3-HtM">
+        <!--Photo PreviewVC-->
+        <scene sceneID="Js4-9u-Jun">
             <objects>
-                <viewController id="PZr-Dc-Z30" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="A2K-I1-r5W">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                <viewController id="gyr-WA-X9Y" customClass="PhotoPreviewVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KK6-mF-F70">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="t6Q-0b-sEA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Preview" id="NqA-iQ-f68">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="vsB-c1-b8T">
+                                            <connections>
+                                                <action selector="done:" destination="gyr-WA-X9Y" id="HHd-lE-XQk"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="2Xz-iK-ebR">
+                                <rect key="frame" x="0.0" y="44" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="2Xz-iK-ebR" id="Yxv-dN-IqT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jfK-uE-PQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4007" y="-224"/>
+        </scene>
+        <!--Sign View Controller-->
+        <scene sceneID="cBZ-C3-HtM">
+            <objects>
+                <viewController id="PZr-Dc-Z30" customClass="GRNSignViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A2K-I1-r5W">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
                             <button opaque="NO" tag="123" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="oC7-8I-h3u">
-                                <rect key="frame" x="172" y="344" width="133" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <rect key="frame" x="193" y="334" width="133" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <inset key="titleEdgeInsets" minX="-165" minY="80" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="40" minY="40" maxX="40" maxY="40"/>
@@ -1371,6 +1418,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signAgain:" destination="PZr-Dc-Z30" eventType="touchUpInside" id="aUR-0o-WIr"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" id="Na6-TC-ARV" customClass="UnderlinedView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1401,7 +1451,7 @@
                             </view>
                             <view contentMode="scaleToFill" id="cSD-wL-f2t">
                                 <rect key="frame" x="15" y="69" width="290" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="Vzy-zK-k1P" customClass="DrawView">
                                         <rect key="frame" x="1" y="1" width="288" height="298"/>
@@ -1415,6 +1465,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.19" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="GAp-0J-hva"/>
+                    <connections>
+                        <outlet property="signatureView" destination="Vzy-zK-k1P" id="qrp-vS-Zyn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfg-S7-Swo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1712,9 +1765,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="v5I-J2-Zfo"/>
+        <segue reference="oLp-rE-uEd"/>
         <segue reference="tZn-sE-tW1"/>
-        <segue reference="DV4-Qy-iQa"/>
-        <segue reference="Aaf-ya-xSB"/>
+        <segue reference="7fL-dk-pel"/>
+        <segue reference="r70-lo-3H0"/>
     </inferredMetricsTieBreakers>
 </document>

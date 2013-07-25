@@ -13,4 +13,5 @@
 @interface GRNPurchaseOrderViewController : GRNBaseViewController
 @property (nonatomic, strong) Contract *contract;
 @property (strong, nonatomic) IBOutlet UILabel *errorLabel;
+@property BOOL returnedAfterSubmission; //TODO:
 @end

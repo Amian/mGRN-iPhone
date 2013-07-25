@@ -18,5 +18,6 @@
 
 - (IBAction)dismissKeyboard:(id)sender;
 - (IBAction)showDatePicker:(UIButton*)button;
+- (IBAction)submit:(id)sender;
 
 @end

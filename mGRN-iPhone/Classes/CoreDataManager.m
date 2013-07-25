@@ -82,4 +82,11 @@ static CoreDataManager *sharedInstance = nil;
     //TODO:
     return NO;
 }
+
+#pragma mark - GRN Submission
+
+-(void)submitAnyGrnsAwaitingSubmittion
+{
+    //TODO:
+}
 @end

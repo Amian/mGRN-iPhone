@@ -15,4 +15,6 @@
 +(NSManagedObjectContext*)moc;
 +(BOOL)hasSessionExpired;
 +(void)removeAllContractData;
+-(void)submitAnyGrnsAwaitingSubmittion;
+
 @end

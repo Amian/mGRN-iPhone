@@ -36,6 +36,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Make sure these values are empty
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:KeyImage1];
+    [defaults setObject:nil forKey:KeyImage2];
+    [defaults setObject:nil forKey:KeyImage3];
+    [defaults setObject:nil forKey:KeySignature];
+    [defaults synchronize];
+    
     [self displaySelectedItem];
 }
 

@@ -29,6 +29,10 @@
 		F72D4D8C17A018B900BD4BE4 /* GRNWbsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D8B17A018B800BD4BE4 /* GRNWbsTableViewController.m */; };
 		F72D4D8D17A019B400BD4BE4 /* BorderedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D82179DDD6E00BD4BE4 /* BorderedTextView.m */; };
 		F72D4D9017A03A3500BD4BE4 /* GRNCompleteGrnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D8F17A03A3200BD4BE4 /* GRNCompleteGrnViewController.m */; };
+		F72D4D9217A040F700BD4BE4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72D4D9117A040F600BD4BE4 /* MobileCoreServices.framework */; };
+		F72D4D9517A0444700BD4BE4 /* PhotoPreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D9417A043ED00BD4BE4 /* PhotoPreviewVC.m */; };
+		F72D4D9817A047D600BD4BE4 /* GRNSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D9717A047D500BD4BE4 /* GRNSignViewController.m */; };
+		F72D4D9B17A04FED00BD4BE4 /* BorderedBlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D9A17A04FDF00BD4BE4 /* BorderedBlackView.m */; };
 		F76716E617859E8D00920CEA /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = F76716E217859E8D00920CEA /* logout.png */; };
 		F76716E717859E8D00920CEA /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = F76716E317859E8D00920CEA /* reload.png */; };
 		F76716E817859E8D00920CEA /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = F76716E417859E8D00920CEA /* search.png */; };
@@ -127,6 +131,13 @@
 		F72D4D8B17A018B800BD4BE4 /* GRNWbsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRNWbsTableViewController.m; sourceTree = "<group>"; };
 		F72D4D8E17A03A3100BD4BE4 /* GRNCompleteGrnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRNCompleteGrnViewController.h; sourceTree = "<group>"; };
 		F72D4D8F17A03A3200BD4BE4 /* GRNCompleteGrnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRNCompleteGrnViewController.m; sourceTree = "<group>"; };
+		F72D4D9117A040F600BD4BE4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F72D4D9317A043EB00BD4BE4 /* PhotoPreviewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPreviewVC.h; sourceTree = "<group>"; };
+		F72D4D9417A043ED00BD4BE4 /* PhotoPreviewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoPreviewVC.m; sourceTree = "<group>"; };
+		F72D4D9617A047D400BD4BE4 /* GRNSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRNSignViewController.h; sourceTree = "<group>"; };
+		F72D4D9717A047D500BD4BE4 /* GRNSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRNSignViewController.m; sourceTree = "<group>"; };
+		F72D4D9917A04FDF00BD4BE4 /* BorderedBlackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderedBlackView.h; sourceTree = "<group>"; };
+		F72D4D9A17A04FDF00BD4BE4 /* BorderedBlackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderedBlackView.m; sourceTree = "<group>"; };
 		F76716E217859E8D00920CEA /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		F76716E317859E8D00920CEA /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 		F76716E417859E8D00920CEA /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
@@ -241,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72D4D9217A040F700BD4BE4 /* MobileCoreServices.framework in Frameworks */,
 				F7B74059176D0BF600E5A502 /* QuartzCore.framework in Frameworks */,
 				F7B74007176CF44500E5A502 /* UIKit.framework in Frameworks */,
 				F7B74009176CF44500E5A502 /* Foundation.framework in Frameworks */,
@@ -264,6 +276,7 @@
 		F7B73FF7176CF44500E5A502 = {
 			isa = PBXGroup;
 			children = (
+				F72D4D9117A040F600BD4BE4 /* MobileCoreServices.framework */,
 				F7B74058176D0BF500E5A502 /* QuartzCore.framework */,
 				F7B7400E176CF44500E5A502 /* mGRN-iPhone */,
 				F7B74005176CF44500E5A502 /* Frameworks */,
@@ -352,6 +365,10 @@
 				F72D4D8B17A018B800BD4BE4 /* GRNWbsTableViewController.m */,
 				F72D4D8E17A03A3100BD4BE4 /* GRNCompleteGrnViewController.h */,
 				F72D4D8F17A03A3200BD4BE4 /* GRNCompleteGrnViewController.m */,
+				F72D4D9317A043EB00BD4BE4 /* PhotoPreviewVC.h */,
+				F72D4D9417A043ED00BD4BE4 /* PhotoPreviewVC.m */,
+				F72D4D9617A047D400BD4BE4 /* GRNSignViewController.h */,
+				F72D4D9717A047D500BD4BE4 /* GRNSignViewController.m */,
 				F7B74054176D070600E5A502 /* Segues */,
 				F7B74041176CFC1300E5A502 /* UI Elements */,
 			);
@@ -393,6 +410,8 @@
 				F72D4D83179DDD7D00BD4BE4 /* Signature Box */,
 				F72D4D81179DDD6E00BD4BE4 /* BorderedTextView.h */,
 				F72D4D82179DDD6E00BD4BE4 /* BorderedTextView.m */,
+				F72D4D9917A04FDF00BD4BE4 /* BorderedBlackView.h */,
+				F72D4D9A17A04FDF00BD4BE4 /* BorderedBlackView.m */,
 				F7B74042176CFC1300E5A502 /* BorderedTextField.h */,
 				F7B74043176CFC1300E5A502 /* BorderedTextField.m */,
 				F7B74044176CFC1300E5A502 /* UnderlinedView.h */,
@@ -590,6 +609,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72D4D9B17A04FED00BD4BE4 /* BorderedBlackView.m in Sources */,
+				F72D4D9517A0444700BD4BE4 /* PhotoPreviewVC.m in Sources */,
 				F72D4D8D17A019B400BD4BE4 /* BorderedTextView.m in Sources */,
 				F7B7407D176D1A2D00E5A502 /* GRNM1XHeader.m in Sources */,
 				F7B74015176CF44500E5A502 /* main.m in Sources */,
@@ -642,6 +663,7 @@
 				F72D4D8917A0133C00BD4BE4 /* GRNRejectionReasonTableViewController.m in Sources */,
 				F72D4D8C17A018B900BD4BE4 /* GRNWbsTableViewController.m in Sources */,
 				F72D4D9017A03A3500BD4BE4 /* GRNCompleteGrnViewController.m in Sources */,
+				F72D4D9817A047D600BD4BE4 /* GRNSignViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

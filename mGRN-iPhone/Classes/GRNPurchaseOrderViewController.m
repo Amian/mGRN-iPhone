@@ -28,6 +28,30 @@
 
 @implementation GRNPurchaseOrderViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.returnedAfterSubmission)
+    {
+        PurchaseOrder *po = [self.dataArray objectAtIndex:self.selectedIndex.section];
+        NSManagedObjectID *selectedPO = po.objectID;
+        
+        //Get purchase orders again
+        self.dataArray = [self getDataArray];
+
+        //Check if previously selected purchase order is still present
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"objectID = %@",selectedPO];
+        if (![[self.dataArray filteredArrayUsingPredicate:p] count])
+        {
+            //Purchase order does not exist anymore
+            self.selectedIndex = nil;
+            [self.tableView reloadData];
+        }
+        
+        self.returnedAfterSubmission = NO;
+    }
+}
+
 #pragma mark - Getters and Setters
 
 -(void)setContract:(Contract *)contract

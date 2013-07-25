@@ -13,7 +13,7 @@
 #import "CoreDataManager.h"
 #import "SDN+Management.h"
 #import "GRNOrderItemDetailViewController.h"
-
+#import "GRNCompleteGrnViewController.h"
 @interface GRNOrderItemViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
 @end
@@ -147,6 +147,10 @@
     {
         cell.selected = YES;
     }
+    else
+    {
+        cell.selected = NO;
+    }
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -156,15 +160,16 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.selectedIndexPath)
-    {
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:self.selectedIndexPath];
-        cell.selected = NO;
-        [tableView deselectRowAtIndexPath:self.selectedIndexPath animated:NO];
-        //        [tableView reloadRowsAtIndexPaths:@[self.selectedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
-        self.selectedIndexPath = nil;
-    }
-    
+//    if (self.selectedIndexPath)
+//    {
+//        UITableViewCell *cell = [tableView cellForRowAtIndexPath:self.selectedIndexPath];
+//        cell.selected = NO;
+//        [tableView deselectRowAtIndexPath:self.selectedIndexPath animated:NO];
+//        //        [tableView reloadRowsAtIndexPaths:@[self.selectedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+//        self.selectedIndexPath = indexPath;
+//    }
+//
+    self.selectedIndexPath = indexPath;
     [self performSegueWithIdentifier:@"itemDetails" sender:self];
 }
 
@@ -233,12 +238,14 @@
         [moc save:nil];
         
         //Remove data from nsuserdefaults
+        
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:nil forKey:KeyImage1];
         [defaults setObject:nil forKey:KeyImage2];
         [defaults setObject:nil forKey:KeyImage3];
         [defaults setObject:nil forKey:KeySignature];
         [defaults synchronize];
+        
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -256,6 +263,8 @@
     {
         //Save items
         [[CoreDataManager moc] save:nil];
+        GRNCompleteGrnViewController *vc = segue.destinationViewController;
+        vc.grn = self.grn;
     }
 }
 
