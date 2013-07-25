@@ -36,15 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //Make sure these values are empty
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:nil forKey:KeyImage1];
-    [defaults setObject:nil forKey:KeyImage2];
-    [defaults setObject:nil forKey:KeyImage3];
-    [defaults setObject:nil forKey:KeySignature];
-    [defaults synchronize];
-    
     [self displaySelectedItem];
 }
 
@@ -83,9 +74,9 @@
     self.dismissKeyboardButton.enabled = YES;
     CGRect keyboardFrame = [[[notification userInfo] valueForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue]; //frame of keyboard
     CGRect rect = self.scrollView.frame;
+    self.scrollView.contentSize = rect.size;
     rect.size.height -= keyboardFrame.size.height;
     self.scrollView.frame = rect;
-    self.scrollView.contentSize = self.view.frame.size;
     
     if (self.selectedField)
     {

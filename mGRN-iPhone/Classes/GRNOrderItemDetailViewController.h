@@ -28,5 +28,6 @@
 @property (strong, nonatomic) IBOutlet UIView *viewBelowWbsCode;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIButton *dismissKeyboardButton;
+- (IBAction)dismissKeyBoard:(UIButton*)sender;
 
 @end

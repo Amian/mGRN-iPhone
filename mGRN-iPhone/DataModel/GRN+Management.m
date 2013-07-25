@@ -47,7 +47,6 @@
         for (PurchaseOrderItem *poi in purchaseOrder.lineItems) {
             [GRNItem grnItemForGRN:grn withDataFromPurchaseOrderItem:poi inManagedObjectContext:context error:nil];
         }
-        [context save:nil];
     }
     
     return grn;
@@ -61,12 +60,11 @@
     grn.orderNumber = purchaseOrder.orderNumber;
     grn.deliveryDate = [[NSDate alloc] init];
     grn.notes = @"";
-//    grn.purchaseOrder = purchaseOrder;
+    //    grn.purchaseOrder = purchaseOrder;
     [purchaseOrder addGrnsObject:grn];
     for (PurchaseOrderItem *poi in purchaseOrder.lineItems) {
         [GRNItem grnItemForGRN:grn withDataFromPurchaseOrderItem:poi inManagedObjectContext:context error:nil];
     }
-    [context save:nil];
     return grn;
 }
 
@@ -113,7 +111,6 @@
         }
         [context deleteObject:o];
     }
-    [context save:nil];
 }
 
 +(GRN*)fetchGRNWithSDN:(NSString*)sdn inMOC:(NSManagedObjectContext*)moc
@@ -123,5 +120,19 @@
     NSError *fetchError = nil;
     NSArray *matches = [moc executeFetchRequest:request error:&fetchError];
     return [matches lastObject];
+}
+
++(int)CountGrnAwaitingSubmissionInMOC:(NSManagedObjectContext*)moc
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"GRN" inManagedObjectContext:moc]];
+    request.predicate = [NSPredicate predicateWithFormat:@"submitted = %@",[NSNumber numberWithBool:YES]];
+    [request setIncludesSubentities:NO];
+    NSError *err;
+    NSUInteger count = [moc countForFetchRequest:request error:&err];
+    if(count == NSNotFound) {
+        //Handle error
+    }
+    return count;
 }
 @end

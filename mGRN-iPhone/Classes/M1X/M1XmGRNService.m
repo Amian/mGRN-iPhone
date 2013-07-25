@@ -187,18 +187,19 @@
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",self.systemURL,M1xMgrnService_DoSubmission]];
     request.header = header;
     NSMutableDictionary *body = [[self getDictFromObject:grn] mutableCopy];
+
     NSMutableArray *items = [NSMutableArray array];
     for (M1XLineItems *item in lineItems)
     {
         [items addObject:[self getDictFromObject:item]];
     }
     [body setValue:items forKey:@"lineItems"];
+
     request.body = body;
     request.extraParameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                kco,@"kco",
                                nil];
     M1XResponse *result = [M1XRequestor sendSyncronousRequest:request withURL:url];
-//    NSLog(@"order number = %@",[body objectForKey:@"orderNumber"]);
     return result;
 }
 

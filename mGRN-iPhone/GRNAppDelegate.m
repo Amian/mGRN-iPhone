@@ -7,6 +7,7 @@
 //
 
 #import "GRNAppDelegate.h"
+#import "CoreDataManager.h"
 
 @implementation GRNAppDelegate
 
@@ -16,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
+    [[CoreDataManager sharedInstance] submitAnyGrnsAwaitingSubmittion];
     return YES;
 }
 

@@ -10,11 +10,15 @@
 
 @interface CoreDataManager : NSObject
 + (CoreDataManager*)sharedInstance;
-+(void)removeData:(BOOL)allData;
--(void)submitGRN;
+//-(void)submitGRN;
 +(NSManagedObjectContext*)moc;
 +(BOOL)hasSessionExpired;
++(void)removeAllAppData;
 +(void)removeAllContractData;
 -(void)submitAnyGrnsAwaitingSubmittion;
+-(void)startSession;
+-(void)endSession;
+@property BOOL creatingGRN;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

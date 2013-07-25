@@ -81,11 +81,6 @@
 
 -(void)getDataFromAPI
 {
-    if ([CoreDataManager hasSessionExpired])
-    {
-        //TODO
-        return;
-    }
     [self startLoading];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [self.service GetPurchaseOrdersWithHeader:[GRNM1XHeader Header]

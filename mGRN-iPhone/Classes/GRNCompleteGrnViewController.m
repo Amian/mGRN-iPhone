@@ -16,13 +16,15 @@
 #import "SDN+Management.h"
 #import "PurchaseOrderItem+Management.h"
 #import "GRNItem+Management.h"
-
+#import "GRNOrderItemViewController.h"
+#import "LoadingView.h"
 @interface GRNCompleteGrnViewController () <UIImagePickerControllerDelegate, UIAlertViewDelegate, UITextViewDelegate>
 @property (nonatomic, strong) UIImage *image1;
 @property (nonatomic, strong) UIImage *image2;
 @property (nonatomic, strong) UIImage *image3;
 @property (nonatomic, strong) UIImage *selectedImage;
 @property (nonatomic, strong) UIView *datePickerView;
+@property (nonatomic, strong) UIView *loadingView;
 @end
 
 @implementation GRNCompleteGrnViewController
@@ -43,30 +45,33 @@
 
 - (void)viewDidLoad
 {
+    [self displayGRN];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
 -(void)displayGRN
 {
+    [self.view addSubview:self.loadingView];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"dd/MM/yyyy";
         NSString *date;
         date = [formatter stringFromDate:self.grn.deliveryDate? self.grn.deliveryDate : [NSDate date]];
         [self.dateButton setTitle:date forState:UIControlStateNormal];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.image1 = [UIImage imageWithData:[defaults objectForKey:KeyImage1]];
-    self.image2 = [UIImage imageWithData:[defaults objectForKey:KeyImage2]];
-    self.image3 = [UIImage imageWithData:[defaults objectForKey:KeyImage3]];
-    [self refreshImageView];
-    
-    //Remove data from nsuserdefaults
-//    [defaults setObject:nil forKey:KeyImage1];
-//    [defaults setObject:nil forKey:KeyImage2];
-//    [defaults setObject:nil forKey:KeyImage3];
-    [defaults synchronize];
-    
+        self.comments.text = self.grn.notes;
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        self.image1 = [UIImage imageWithData:[defaults objectForKey:KeyImage1]];
+        self.image2 = [UIImage imageWithData:[defaults objectForKey:KeyImage2]];
+        self.image3 = [UIImage imageWithData:[defaults objectForKey:KeyImage3]];
+        if (self.image1 || self.image2 || self.image3)
+        {
+            [self refreshImageView];
+        }
+        [self.loadingView removeFromSuperview];
+    }];
 }
 
 
@@ -90,29 +95,67 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
     [self dismissModalViewControllerAnimated:YES];
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    int index = 0;
     if (!self.image1)
     {
-        self.grn.photo1URI = [self base64forData:imageData];
+        index = 1;
         self.image1 = image;
     }
     else if (!self.image2)
     {
-        self.grn.photo2URI = [self base64forData:imageData];
+        index = 2;
         self.image2 = image;
     }
     else if (!self.image3)
     {
-        self.grn.photo3URI = [self base64forData:imageData];
+        index = 3;
         self.image3 = image;
     }
     else
     {
         return;
     }
+        
     [self refreshImageView];
+    [self.view addSubview:self.loadingView];
+    [self performSelector:@selector(saveImageNumber:) withObject:[NSNumber numberWithInt:index] afterDelay:0.1];
+        
 }
 
+-(void)saveImageNumber:(NSNumber*)index
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    switch ([index intValue])
+    {
+        case 1:
+        {
+            self.grn.photo1URI = [self base64forData:UIImageJPEGRepresentation(self.image1, 0.5)];
+            [defaults setValue:UIImagePNGRepresentation(self.image1) forKey:KeyImage1];
+            break;
+        }
+        case 2:
+        {
+            self.grn.photo2URI = [self base64forData:UIImageJPEGRepresentation(self.image2, 0.5)];
+            [defaults setValue:UIImagePNGRepresentation(self.image2) forKey:KeyImage2];
+            break;
+        }
+        case 3:
+        {
+            self.grn.photo3URI = [self base64forData:UIImageJPEGRepresentation(self.image3, 0.5)];
+            [defaults setValue:UIImagePNGRepresentation(self.image3) forKey:KeyImage3];
+            break;
+        }
+        default:
+            break;
+    }
+    [defaults synchronize];
+    [self.loadingView removeFromSuperview];
+    
+//    NSString *s = [[NSString alloc] initWithData:[self base64DataforData:UIImageJPEGRepresentation(self.image1, 0.5)] encoding:NSASCIIStringEncoding];
+//    NSLog(@"%@",[[NSString alloc] initWithData:[self base64DataforData:UIImageJPEGRepresentation(self.image1, 0.5)] encoding:NSASCIIStringEncoding]);
+//    NSLog(@"%@",[self base64forData:UIImageJPEGRepresentation(self.image1, 0.5)]);
+//    NSLog(@"%@",self.grn.photo1URI);
+}
 
 -(void)refreshImageView
 {
@@ -214,6 +257,39 @@
     return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 }
 
+
+- (NSData*)base64DataforData:(NSData*)theData {
+    
+    const uint8_t* input = (const uint8_t*)[theData bytes];
+    NSInteger length = [theData length];
+    
+    static char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    
+    NSMutableData* data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
+    uint8_t* output = (uint8_t*)data.mutableBytes;
+    
+    NSInteger i;
+    for (i=0; i < length; i += 3) {
+        NSInteger value = 0;
+        NSInteger j;
+        for (j = i; j < (i + 3); j++) {
+            value <<= 8;
+            
+            if (j < length) {
+                value |= (0xFF & input[j]);
+            }
+        }
+        
+        NSInteger theIndex = (i / 3) * 4;
+        output[theIndex + 0] =                    table[(value >> 18) & 0x3F];
+        output[theIndex + 1] =                    table[(value >> 12) & 0x3F];
+        output[theIndex + 2] = (i + 1) < length ? table[(value >> 6)  & 0x3F] : '=';
+        output[theIndex + 3] = (i + 2) < length ? table[(value >> 0)  & 0x3F] : '=';
+    }
+    
+    return data;
+}
+
 - (IBAction)showDatePicker:(UIButton*)button
 {
     [self.comments resignFirstResponder];
@@ -225,8 +301,7 @@
 {
     //Check signature
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    UIImage *signature = [UIImage imageWithData:[defaults objectForKey:KeySignature]];
-    if (!signature)
+    if (![defaults objectForKey:KeySignature])
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"The signature can't be blank."
                                                         message:nil
@@ -237,33 +312,43 @@
         return;
     }
     
-    //Save Grn
-    self.grn.signatureURI = [self base64forData:UIImageJPEGRepresentation(signature ,1.f)];
-    self.grn.notes = self.comments.text;
+    [self.view addSubview:self.loadingView];
+    [self performSelector:@selector(submitGRN) withObject:nil afterDelay:0.1];
     
-    //Add to submission queue
+}
+
+-(void)submitGRN
+{
+    //If grn date wasnt set, set it to current date
+    if (!self.grn.deliveryDate) self.grn.deliveryDate = [NSDate date];
+    
+    //Save Signature
+    UIImage *signature = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:KeySignature]];
+    self.grn.signatureURI = [self base64forData:UIImageJPEGRepresentation(signature ,1.f)];
+    
+    //Save remaining data
+    self.grn.notes = self.comments.text;
     self.grn.submitted = [NSNumber numberWithBool:YES];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void)
-                   {
-                       [[CoreDataManager sharedInstance] submitAnyGrnsAwaitingSubmittion];
-                   });
     
     //Add SDN to core data
     [SDN InsertSDN:self.grn.supplierReference InMOC:[CoreDataManager moc]];
     
     //Adjust purchase orders
     [self updatePurchaseOrder];
+    
+    //Save context
     NSError *error;
     [[CoreDataManager moc] save:&error];
     NSLog(@"Error = %@",error);
     
+    //Add to submission queue
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void)
+                   {
+                       [[CoreDataManager sharedInstance] submitAnyGrnsAwaitingSubmittion];
+                   });
     
-    [defaults setObject:nil forKey:KeyImage1];
-    [defaults setObject:nil forKey:KeyImage2];
-    [defaults setObject:nil forKey:KeyImage3];
-    [defaults setObject:nil forKey:KeySignature];
-    [defaults synchronize];
+    [[CoreDataManager sharedInstance] setCreatingGRN:NO];
     
     for (UIViewController *vc in self.navigationController.viewControllers)
     {
@@ -356,23 +441,25 @@
 {
     if (buttonIndex != alertView.cancelButtonIndex)
     {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         switch (alertView.tag)
         {
             case 1:
-                self.grn.photo1URI = nil;
                 self.image1 = nil;
+                [defaults setObject:nil forKey:KeyImage1];
                 break;
             case 2:
-                self.grn.photo2URI = nil;
                 self.image2 = nil;
+                [defaults setObject:nil forKey:KeyImage2];
                 break;
             case 3:
-                self.grn.photo3URI = nil;
                 self.image3 = nil;
+                [defaults setObject:nil forKey:KeyImage3];
                 break;
             default:
                 break;
         }
+        [defaults synchronize];
         [self refreshImageView];
     }
 }
@@ -409,5 +496,14 @@
             //TOOD
         }
     }
+}
+
+-(UIView*)loadingView
+{
+    if(!_loadingView)
+    {
+        _loadingView = [[LoadingView alloc] initWithFrame:self.view.bounds];
+    }
+    return _loadingView;
 }
 @end

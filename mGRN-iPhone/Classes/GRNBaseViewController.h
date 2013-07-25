@@ -28,7 +28,7 @@ typedef enum
 
 - (IBAction)logout:(id)sender;
 - (IBAction)showInfo:(id)sender;
--(IBAction)back:(id)sender;
+//-(IBAction)back:(id)sender;
 -(void)getDataFromAPI;
 - (IBAction)search:(id)sender;
 -(void)startLoading;

@@ -119,6 +119,17 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ([CoreDataManager hasSessionExpired])
+    {
+        //Session expired and no po in cache
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:SessionExpiryText
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     [self createGRN:nil];
 }
 
@@ -126,19 +137,30 @@
 
 - (IBAction)createGRN:(id)sender
 {
+    if ([CoreDataManager hasSessionExpired])
+    {
+        //Session expired and no po in cache
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:SessionExpiryText
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     [self performSegueWithIdentifier:@"grn" sender:self];
 //    self.sdnView.frame = self.view.bounds;
 //    [self.view addSubview:self.sdnView];
 //    [self.sdn becomeFirstResponder];
 }
 
-- (IBAction)next:(id)sender {
-    [self performSegueWithIdentifier:@"grn" sender:self];
-}
-
-- (IBAction)closeSDN:(id)sender {
-    [self.sdnView removeFromSuperview];
-}
+//- (IBAction)next:(id)sender {
+//    [self performSegueWithIdentifier:@"grn" sender:self];
+//}
+//
+//- (IBAction)closeSDN:(id)sender {
+//    [self.sdnView removeFromSuperview];
+//}
 
 - (IBAction)logout:(id)sender
 {
@@ -159,7 +181,7 @@
     if (buttonIndex != alertView.cancelButtonIndex)
     {
         //Logout
-        [CoreDataManager removeData:NO];
+        [CoreDataManager removeAllContractData];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }

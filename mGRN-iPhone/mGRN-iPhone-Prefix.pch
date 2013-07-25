@@ -45,6 +45,12 @@
 
 #define ChangeScrollViewContentOffsetNotification @"ChangeScrollViewContentOffsetNotification"
 
+#define SessionExpiryNotification @"SessionExpiryNotification"
+
+#define SessionExpiryText @"Your session has timed out. Please logout and login again."
+#define SessionExpiryDuringGRNText @"Your session has timed out. Please finish your GRN, logout and login again."
+
+
 #include <assert.h>
 #include <stdbool.h>
 #include <sys/types.h>

@@ -11,8 +11,11 @@
 #import "RejectionReasons+Management.h"
 #import "GRNM1XHeader.h"
 
+#define SearchCancelButtonTag 101
+
 @interface GRNBaseViewController ()
 @property (nonatomic, strong) UIView *loadingView;
+@property CGRect tableViewFrame;
 @end
 
 @implementation GRNBaseViewController
@@ -27,6 +30,7 @@
         if ([possibleButton isKindOfClass:[UIButton class]])
         {
             UIButton *cancelButton = (UIButton*)possibleButton;
+            cancelButton.tag = SearchCancelButtonTag;
             cancelButton.enabled = YES;
             break;
         }
@@ -55,13 +59,16 @@
 
 -(void)onKeyboardHide:(NSNotification *)notification
 {
-    self.tableView.frame = CGRectMake(14.0, 44.0, 292.0, 504.0);
+    self.tableView.frame = self.tableViewFrame;
 }
 
 -(void)onKeyboardShow:(NSNotification *)notification
 {
+    self.tableViewFrame = self.tableView.frame;
     CGRect keyboardFrame = [[[notification userInfo] valueForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue]; //height of keyboard
-    self.tableView.frame = CGRectMake(14.0, 44.0, 292.0, 504.0 - keyboardFrame.size.height);
+    CGRect frame = self.tableViewFrame;
+    frame.size.height -= keyboardFrame.size.height;
+    self.tableView.frame = frame;
 }
 
 #pragma makr - Getters and Setters
@@ -91,12 +98,21 @@
                                           cancelButtonTitle:@"NO"
                                           otherButtonTitles:@"YES",nil];
     [alert show];
-    
 }
 
 - (IBAction)reloadData:(id)sender
 {
-    //TODO:LoadingView
+    if ([CoreDataManager hasSessionExpired])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:SessionExpiryText
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
     self.selectedIndex = nil;
     [self getDataFromAPI];
 }
@@ -119,11 +135,6 @@
     [alert show];
 }
 
-//-(IBAction)back:(id)sender
-//{
-//    [self.navigationController popViewControllerAnimated:YES];
-//}
-
 -(void)getDataFromAPI
 {
     //Override
@@ -143,7 +154,8 @@
     if (buttonIndex != alertView.cancelButtonIndex)
     {
         //Logout
-        [CoreDataManager removeData:NO];
+        [[CoreDataManager sharedInstance] endSession];
+        [CoreDataManager removeAllContractData];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
@@ -192,6 +204,7 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self.searchBar resignFirstResponder];
+    [(UIButton*)[self.searchBar viewWithTag:SearchCancelButtonTag] setEnabled:YES];
 }
 
 -(NSArray*)getDataArray

@@ -81,9 +81,8 @@
     }
         self.loadingView.hidden = NO;
     
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [self createNewSession];
-    }];
+    //Give loading view time to appear
+    [self performSelector:@selector(createNewSession) withObject:nil afterDelay:0.1];
 }
 
 - (IBAction)dismissKeyboard:(id)sender
@@ -126,7 +125,7 @@
     self.mgrnLogo.alpha = 1.0;
     self.mgrnLogo.center = mGRNLogoCenter;
     [UIView commitAnimations];
-    [self performSelector:@selector(animationComplete) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(animationComplete) withObject:nil afterDelay:2.0];
 }
 
 -(void)animationComplete
@@ -273,14 +272,14 @@
 -(void)initialSetup
 {
     //TODO:[SDN removeExpiredSDNinMOC:[CoreDataManager moc]];
-    /*if (!AmIBeingDebugged())*/ [CoreDataManager removeData:NO];
+    /*if (!AmIBeingDebugged())*/ [CoreDataManager removeAllContractData];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:nil forKey:KeyImage1];
     [defaults setValue:nil forKey:KeyImage2];
     [defaults setValue:nil forKey:KeyImage3];
     [defaults setValue:nil forKey:KeySignature];
     [defaults synchronize];
-    [[CoreDataManager sharedInstance] submitGRN];
+    [[CoreDataManager sharedInstance] startSession];
 }
 
 
@@ -321,15 +320,17 @@
 
 #pragma mark - Properties
 
--(LoadingView*)loadingView
+
+-(UIView*)loadingView
 {
-    if (_loadingView)
+    if(!_loadingView)
     {
-        _loadingView = [[LoadingView alloc] init];
-        _loadingView.frame = self.view.bounds;
+        _loadingView = [[LoadingView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:_loadingView];
         _loadingView.hidden = YES;
     }
     return _loadingView;
 }
+
 
 @end

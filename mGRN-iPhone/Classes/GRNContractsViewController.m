@@ -90,6 +90,18 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Contract *c = [self.dataArray objectAtIndex:indexPath.section];
+    if ([CoreDataManager hasSessionExpired] && c.purchaseOrders.count == 0)
+    {
+        //Session expired and no po in cache
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:SessionExpiryText
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     [self performSegueWithIdentifier:@"purchaseOrders" sender:self];
 }
@@ -121,7 +133,7 @@
         NSMutableArray *contractObjectArray = [NSMutableArray array];
         if (contracts.count)
         {
-            [CoreDataManager removeData:NO];
+            [CoreDataManager removeAllContractData];
         }
         for (NSDictionary *dict in contracts)
         {
@@ -220,5 +232,4 @@
     [service GetRejectionReasonsWithHeader:[GRNM1XHeader Header]
                                        kco:kco];
 }
-
 @end

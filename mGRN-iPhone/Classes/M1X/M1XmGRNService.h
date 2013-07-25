@@ -34,7 +34,6 @@ RequestType;
 @property (nonatomic, strong) NSString *supplierReference;
 @end
 
-
 @interface M1XLineItems : NSObject
 @property (nonatomic, strong) NSString *exception;
 @property (nonatomic, strong) NSString *ID;

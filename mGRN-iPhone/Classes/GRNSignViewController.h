@@ -10,6 +10,7 @@
 @class DrawView;
 @interface GRNSignViewController : UIViewController
 @property (strong, nonatomic) IBOutlet DrawView *signatureView;
+@property (strong, nonatomic) IBOutlet UIButton *signagainbutton;
 
 - (IBAction)signAgain:(id)sender;
 @end

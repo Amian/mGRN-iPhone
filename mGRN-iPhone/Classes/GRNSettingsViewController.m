@@ -141,7 +141,7 @@
         [defaults setValue:uri forKey:KeySystemURI];
         self.masterHostLabel.text = self.popUpTextField.text;
         [defaults synchronize];
-        [CoreDataManager removeData:YES];
+        [CoreDataManager removeAllAppData];
     }
 }
 

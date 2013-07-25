@@ -23,9 +23,19 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Make sure these values are nil
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:KeyImage1];
+    [defaults setObject:nil forKey:KeyImage2];
+    [defaults setObject:nil forKey:KeyImage3];
+    [defaults setObject:nil forKey:KeySignature];
+    [defaults synchronize];
+    
     self.grn = [GRN grnForPurchaseOrder:self.purchaseOrder
                  inManagedObjectContext:[CoreDataManager moc]
                                   error:nil];
+    [[CoreDataManager sharedInstance] setCreatingGRN:YES];
     self.poLabel.text = [NSString stringWithFormat:@"Order Items for %@",self.grn.purchaseOrder.orderNumber];
 }
 
@@ -33,12 +43,6 @@
 {
     [self.tableView reloadData];
     [super viewWillAppear:animated];
-    //    [self.tableView beginUpdates];
-    //    [self.tableView selectRowAtIndexPath:self.selectedIndexPath
-    //                           animated:NO
-    //                     scrollPosition:UITableViewScrollPositionMiddle];
-    //    [self.tableView endUpdates];
-    
 }
 
 - (IBAction)next:(id)sender {
@@ -245,7 +249,8 @@
         [defaults setObject:nil forKey:KeyImage3];
         [defaults setObject:nil forKey:KeySignature];
         [defaults synchronize];
-        
+        [[CoreDataManager sharedInstance] setCreatingGRN:NO];
+
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

@@ -33,6 +33,13 @@
 		F72D4D9517A0444700BD4BE4 /* PhotoPreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D9417A043ED00BD4BE4 /* PhotoPreviewVC.m */; };
 		F72D4D9817A047D600BD4BE4 /* GRNSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D9717A047D500BD4BE4 /* GRNSignViewController.m */; };
 		F72D4D9B17A04FED00BD4BE4 /* BorderedBlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D9A17A04FDF00BD4BE4 /* BorderedBlackView.m */; };
+		F72D4D9F17A1652E00BD4BE4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F72D4D9E17A1652E00BD4BE4 /* Reachability.m */; };
+		F72D4DA117A1654100BD4BE4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72D4DA017A1654000BD4BE4 /* SystemConfiguration.framework */; };
+		F72D4DA317A1AB7200BD4BE4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F72D4DA217A1AB7100BD4BE4 /* icon.png */; };
+		F72D4DA517A1ABB300BD4BE4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72D4DA417A1ABB200BD4BE4 /* icon@2x.png */; };
+		F7446BA917A1E7C200BFFD1F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7446BA817A1E7C200BFFD1F /* Default@2x.png */; };
+		F7446BAB17A1E7C700BFFD1F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7446BAA17A1E7C700BFFD1F /* Default-568h@2x.png */; };
+		F7446BAD17A1E7CF00BFFD1F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F7446BAC17A1E7CF00BFFD1F /* Default.png */; };
 		F76716E617859E8D00920CEA /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = F76716E217859E8D00920CEA /* logout.png */; };
 		F76716E717859E8D00920CEA /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = F76716E317859E8D00920CEA /* reload.png */; };
 		F76716E817859E8D00920CEA /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = F76716E417859E8D00920CEA /* search.png */; };
@@ -138,6 +145,14 @@
 		F72D4D9717A047D500BD4BE4 /* GRNSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRNSignViewController.m; sourceTree = "<group>"; };
 		F72D4D9917A04FDF00BD4BE4 /* BorderedBlackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderedBlackView.h; sourceTree = "<group>"; };
 		F72D4D9A17A04FDF00BD4BE4 /* BorderedBlackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderedBlackView.m; sourceTree = "<group>"; };
+		F72D4D9D17A1652E00BD4BE4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F72D4D9E17A1652E00BD4BE4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F72D4DA017A1654000BD4BE4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F72D4DA217A1AB7100BD4BE4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		F72D4DA417A1ABB200BD4BE4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		F7446BA817A1E7C200BFFD1F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F7446BAA17A1E7C700BFFD1F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F7446BAC17A1E7CF00BFFD1F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F76716E217859E8D00920CEA /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		F76716E317859E8D00920CEA /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 		F76716E417859E8D00920CEA /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
@@ -252,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72D4DA117A1654100BD4BE4 /* SystemConfiguration.framework in Frameworks */,
 				F72D4D9217A040F700BD4BE4 /* MobileCoreServices.framework in Frameworks */,
 				F7B74059176D0BF600E5A502 /* QuartzCore.framework in Frameworks */,
 				F7B74007176CF44500E5A502 /* UIKit.framework in Frameworks */,
@@ -273,9 +289,24 @@
 			path = "Signature Box";
 			sourceTree = "<group>";
 		};
+		F72D4D9C17A1652E00BD4BE4 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				F72D4D9D17A1652E00BD4BE4 /* Reachability.h */,
+				F72D4D9E17A1652E00BD4BE4 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		F7B73FF7176CF44500E5A502 = {
 			isa = PBXGroup;
 			children = (
+				F7446BAC17A1E7CF00BFFD1F /* Default.png */,
+				F7446BAA17A1E7C700BFFD1F /* Default-568h@2x.png */,
+				F7446BA817A1E7C200BFFD1F /* Default@2x.png */,
+				F72D4DA417A1ABB200BD4BE4 /* icon@2x.png */,
+				F72D4DA217A1AB7100BD4BE4 /* icon.png */,
+				F72D4DA017A1654000BD4BE4 /* SystemConfiguration.framework */,
 				F72D4D9117A040F600BD4BE4 /* MobileCoreServices.framework */,
 				F7B74058176D0BF500E5A502 /* QuartzCore.framework */,
 				F7B7400E176CF44500E5A502 /* mGRN-iPhone */,
@@ -336,6 +367,7 @@
 		F7B74034176CF90000E5A502 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F72D4D9C17A1652E00BD4BE4 /* Reachability */,
 				F7B7407B176D176700E5A502 /* GRNM1XHeader.h */,
 				F7B7407C176D176900E5A502 /* GRNM1XHeader.m */,
 				F7B74060176D16AA00E5A502 /* M1X */,
@@ -599,6 +631,11 @@
 				F72D4D79179B3BCD00BD4BE4 /* icon_sign_white.png in Resources */,
 				F72D4D7B179B3C5100BD4BE4 /* icon_sign_white@2x.png in Resources */,
 				F72D4D7D179C18B100BD4BE4 /* down_icon.png in Resources */,
+				F72D4DA317A1AB7200BD4BE4 /* icon.png in Resources */,
+				F72D4DA517A1ABB300BD4BE4 /* icon@2x.png in Resources */,
+				F7446BA917A1E7C200BFFD1F /* Default@2x.png in Resources */,
+				F7446BAB17A1E7C700BFFD1F /* Default-568h@2x.png in Resources */,
+				F7446BAD17A1E7CF00BFFD1F /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +701,7 @@
 				F72D4D8C17A018B900BD4BE4 /* GRNWbsTableViewController.m in Sources */,
 				F72D4D9017A03A3500BD4BE4 /* GRNCompleteGrnViewController.m in Sources */,
 				F72D4D9817A047D600BD4BE4 /* GRNSignViewController.m in Sources */,
+				F72D4D9F17A1652E00BD4BE4 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

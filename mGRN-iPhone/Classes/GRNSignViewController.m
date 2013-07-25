@@ -9,6 +9,7 @@
 #import "GRNSignViewController.h"
 #import "DrawView.h"
 #import <QuartzCore/QuartzCore.h>
+
 @interface GRNSignViewController () <DrawViewDelegate>
 @property (nonatomic, strong) UIImageView *fakeSignature;
 @end
@@ -44,7 +45,7 @@
         self.fakeSignature.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     }
     self.signatureView.delegate = self;
-        self.signatureView.superview.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.signatureView.superview.layer.borderColor = [UIColor orangeColor].CGColor;
     self.signatureView.superview.layer.borderWidth = 1.0;
 }
 
@@ -56,30 +57,44 @@
 
 - (IBAction)signAgain:(id)sender
 {
+    self.signagainbutton.enabled = NO;
     [self.fakeSignature removeFromSuperview];
     [self.signatureView clearView];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:nil forKey:KeySignature];
-    [defaults synchronize];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void)
+                   {
+                       
+                       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                       [defaults setValue:nil forKey:KeySignature];
+                       [defaults synchronize];
+                   });
+    
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void)
+                   {
+                       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                       if (self.signatureView.hasSigned)
+                       {
+                           [defaults setValue:UIImagePNGRepresentation([self.signatureView makeImage]) forKey:KeySignature];
+                           [defaults synchronize];
+                       }
+                   });
 }
 
-//-(void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-//{
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    if (self.signatureView.hasSigned)
-//    {
-//        [defaults setValue:UIImagePNGRepresentation([self.signatureView makeImage]) forKey:KeySignature];
-//    }
-//}
 -(void)drawViewDidBeginDrawing
 {
+    self.signagainbutton.enabled = YES;
     [self.fakeSignature removeFromSuperview];
 }
 
 -(void)drawViewDidEndDrawing
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:UIImagePNGRepresentation([self.signatureView makeImage]) forKey:KeySignature];
-    [defaults synchronize];
+}
+- (void)viewDidUnload {
+    [self setSignagainbutton:nil];
+    [super viewDidUnload];
 }
 @end
