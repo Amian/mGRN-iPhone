@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/GRNPODetailViewController.m \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/GRNPODetailViewController.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/GRNBaseViewController.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/M1X/M1XmGRNService.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/M1X/M1XRequestor/M1XRequestor.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/M1X/M1XRequestor/M1XRequest.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/M1X/M1XRequestor/M1XRequestHeader.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/M1X/M1XRequestor/M1XResponse.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/M1X/M1XRequestor/M1XResponseHeader.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/M1X/M1XRequestor/M1XResponseHeaderException.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/M1X/M1XRequestor/M1XRequestorDelegate.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/UI\ Elements/LoadingView.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/DataModel/PurchaseOrderItem+Management.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/DataModel/PurchaseOrder+Management.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/DataModel/Contract+Management.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/DataModel/ManagedObjects/Contract.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/DataModel/ManagedObjects/PurchaseOrder.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/DataModel/ManagedObjects/PurchaseOrderItem.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/GRNOrderItemViewController.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/Classes/CoreDataManager.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/DataModel/GRN+Management.h \
+  /Users/Anum/Library/Developer/Pervasic/mGRN-iPhone/mGRN-iPhone/DataModel/ManagedObjects/GRN.h
